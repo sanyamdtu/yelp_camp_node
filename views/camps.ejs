@@ -1,0 +1,33 @@
+<%- include('partials/header'); -%>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <p>
+                    <h1><i class="fas fa-campground"></i> Welcome to the varoius camps</h1>
+                </p>
+                <p>
+                    <h4>We have the camps of the Shinobi World</h4>
+                </p>
+                <a href="/camp/new" class="btn btn-primary btn-lg">Add New Camp</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <% for(var camp of camps){ %>
+                <div class="col-md-3 col-sm-6 ">
+                    <div class="card cardy">
+                        <img src="<%= camp.image %>" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <p class="card-text more_info">
+                                <%=camp.name%><br>
+                                    <a href="/camp/<%=camp.id%>" class="btn btn-primary ">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <%-include('partials/footer'); -%>

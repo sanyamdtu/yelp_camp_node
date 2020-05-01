@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startup</title>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .bg {
+            /* The image used */
+            background-image: url("https://images.unsplash.com/photo-1502335383107-8b1b7ec61742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60");
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        #main-footer {
+            font-family: inherit;
+            word-spacing: 3px;
+            background-color: white;
+            text-align: center;
+            color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .logo {
+            margin-left: 1%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/22443d4f01.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="bg">
+        <%-include("partials/header") %>
+            <div class="jumbotron container center" style="background-color: transparent; ">
+                <h1 class="display-4 text-white" style="font-weight: 500; font-family: sans-serif;">Yelp Camp</h1>
+                <p class="lead text-white" style="font-weight: 400;">Camp -> Yelp camp</p>
+                <p class="text-white" style="font-weight: 400;">This site helps you understand </p>
+                <a class="btn btn-primary btn-light" href="/camp" role="button"><i class="fas fa-campground"></i> Explore!</a>
+            </div>
+            <%- include("partials/footer") %>
+    </div>
+    <!-- Footer -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<%- include('partials/header'); -%>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#up" aria-controls="home">Info</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#bottom" aria-controls="messages">Comments</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="/camp" aria-controls="settings">back</a>
+                </div>
+            </div>
+            <div class="col-md-9" id="up">
+                <div class="card cards_show">
+                    <img src="<%= camp.image %>" class="card-img-top img-fluid">
+                    <div>
+                        <h1 class="display-4">
+                            <%= camp.name %>
+                        </h1>
+                    </div>
+                    <div class="card-body ">
+                        <p class="card-text ">
+                            <%= camp.desc %>
+                        </p>
+
+                        <p>
+                            <em>submitted by:<%= camp.author.username %> </em>
+                        </p>
+                        <a href="/camp/<%= camp._id%>/edit" class="btn btn-warning ">Edit</a>
+                        <form action="/camp/<%= camp._id%>?_method=DELETE" method="POST">
+                            <input class="btn btn-danger" value="Delete" type="submit">
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="jumbotron" id="bottom">
+                    <a href="/camp/<%=camp._id%>/comments/new" class="btn btn-success float-right">Add comment</a>
+                    <br>
+                    <p>
+                        <%for(var comment of  camp.comments) {%>
+                            <p>
+                                <strong><%= comment.author.username %> :</strong>
+                                <%= comment.title %>
+                                    <br>
+                                    <a href="/camp/<%=camp._id%>/comments/<%= comment._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="/camp/<%=camp._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                    </form>
+                            </p>
+                            <hr>
+                            <% } %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%-include('partials/footer'); -%>
